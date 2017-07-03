@@ -11,10 +11,13 @@ module.exports = {
     loaders: [{
       test: /\.jsx?$/,
       include: path.join(__dirname, 'app'),
-      loaders: [
-        'babel'
-      ]
-    }]
+	  loader: 'babel-loader',
+    },
+	{ 
+		test: /\.css$/, 
+		loader: "style-loader!css-loader" 
+	}
+	]
   },
   resolve: {
     extensions: ['', '.js', '.jsx']
